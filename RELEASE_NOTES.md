@@ -1,6 +1,25 @@
-_This file holds "in progress" release notes for the current release under development and is intended for consumption by the Chef Documentation team. Please see <https://docs.chef.io/release_notes.html> for the official Chef release notes._
+This file holds "in progress" release notes for the current release under development and is intended for consumption by the Chef Documentation team. Please see <https://docs.chef.io/release_notes.html> for the official Chef release notes.
 
-# Chef Client Release Notes 14.0.202
+# Chef Client Release Notes 14.1:
+
+## build_essential
+
+The `build_essential` resource no longer requires a name, similar to the `apt_update` resource. 
+
+## Ignore Failure
+The `ignore_failure` property takes a new argument, `:quiet`, to
+suppress the error output when the resource does in fact fail.
+
+## This release of Chef Client 14 resolves a number of regressions in 14.0
+
+- On Windows, the installer now correctly re-extracts files during repair mode
+- Fix a number of issues relating to use with Red Hat Satellite
+- Git fetch now prunes remotes before running
+- Fix locking and unlocking packages with apt and zypper
+- Ensure we don't request every remote file when running with lazy loading enabled
+- The sysctl resource correctly handles missing keys when used with `ignore_error`
+
+# Chef Client Release Notes 14.0.202:
 
 This release of Chef 14 resolves several regressions in the Chef 14.0 release.
 
